@@ -42,9 +42,11 @@ def redirect_url_elastic(request, short_url):
 def redirect_url_cache(request, short_url):
     current = time.time()
     url = cache.get(short_url)
+    request.headers['Cache'] = 'HIT'
     if not url:
         url = Url.objects.get(short_url=short_url)
         cache.set(short_url, url)
+        request.headers['Cache'] = 'MISS'
     t = (time.time() - current)
     # return JsonResponse({'original_url': url.original_url, 'time': t})
     return redirect(url.original_url)
