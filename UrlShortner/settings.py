@@ -138,3 +138,5 @@ CACHES = {
         "LOCATION": "redis://redis:6379",
     }
 }
+
+CSRF_TRUSTED_ORIGINS = ['https://apg.work.gd']
