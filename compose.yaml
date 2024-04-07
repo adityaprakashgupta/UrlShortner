@@ -35,6 +35,7 @@ services:
   db:
     image: postgres
     restart: always
+    hostname: db
     user: postgres
     ports:
       - 5432:5432
@@ -56,6 +57,7 @@ services:
   elastic:
     image: elasticsearch:8.13.0
     container_name: elastic
+    hostname: elastic
     environment:
       - discovery.type=single-node
       - ELASTIC_PASSWORD=elastic
@@ -68,6 +70,7 @@ services:
 
   redis:
     image: redis
+    hostname: redis
     ports:
       - 6379:6379
     volumes:
