@@ -36,9 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
-    'rest_framework',
-    'django_elasticsearch_dsl',
-    'django_elasticsearch_dsl_drf',
+    # 'rest_framework',
+    # 'django_elasticsearch_dsl',
+    # 'django_elasticsearch_dsl_drf',
 ]
 
 MIDDLEWARE = [
@@ -125,12 +125,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ELASTICSEARCH_DSL = {
-    'default': {
-        'hosts': 'http://elastic:9200',
-        'http_auth': ('elastic', 'elastic'),
-    }
-}
+# ELASTICSEARCH_DSL = {
+#     'default': {
+#         'hosts': 'http://elastic:9200',
+#         'http_auth': ('elastic', 'elastic'),
+#     }
+# }
 
 CACHES = {
     "default": {

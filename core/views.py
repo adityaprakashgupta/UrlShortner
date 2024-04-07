@@ -43,7 +43,7 @@ def redirect_url_cache(request, short_url):
     current = time.time()
     url = cache.get(short_url)
     if not url:
-        url = UrlDocument.search().filter('term', short_url=short_url).execute()[0]
+        url = Url.objects.get(short_url=short_url)
         cache.set(short_url, url)
     t = (time.time() - current)
     # return JsonResponse({'original_url': url.original_url, 'time': t})
