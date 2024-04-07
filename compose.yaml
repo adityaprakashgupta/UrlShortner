@@ -66,6 +66,7 @@ services:
       - 9200:9200
       - 9300:9300
     volumes:
+      - ./elasticsearch/jvm.options:/usr/share/elasticsearch/config/jvm.options
       - elastic-data:/usr/share/elasticsearch/data
 
   redis:
